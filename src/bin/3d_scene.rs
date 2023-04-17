@@ -44,7 +44,7 @@ fn setup(
 
 fn rotate_camera(
     time: Res<Time>,
-    mut query: Query<&mut Transform, (With<Camera>)>,
+    mut query: Query<&mut Transform, With<Camera>>,
 ) {
     let eye=Quat::from_rotation_y(time.elapsed_seconds().cos()).mul_vec3(Vec3::new(-2.0,2.5,5.0));
     for mut transform in &mut query {

@@ -1,5 +1,39 @@
 # 方針
 
+## 20230417
+
+3d_scene.rsが最低限動いたfeature
+
+```toml
+[dependencies.bevy]
+version = "0.10.1"
+default-features = false
+features = [
+#"animation",
+"bevy_asset",
+#"bevy_audio",
+#"bevy_gilrs",
+"bevy_scene",
+"bevy_winit",
+"bevy_core_pipeline",
+"bevy_pbr",
+#"bevy_gltf",
+"bevy_render",
+#"bevy_sprite",
+#"bevy_text",
+#"bevy_ui",
+#"png",
+#"hdr",
+#"ktx2",
+#"zstd",
+#"vorbis",
+#"x11",
+#"filesystem_watcher",
+#"android_shared_stdcxx",
+#"tonemapping_luts",
+]
+```
+
 ## 20230414
 
 ### ゲーム作りたい
