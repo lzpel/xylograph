@@ -166,6 +166,40 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
             ..default()
         });
     }
+    //custom
+
+    let another_box_size = Vec2::new(300.0, 200.0);
+    let another_box_position = Vec2::new(-320.0, -250.0);
+    commands
+        .spawn(SpriteBundle {
+            texture: asset_server.load("images/shrimp.jpg"),
+            sprite: Sprite {
+                //color: Color::rgb(0.25, 0.25, 0.75),
+                custom_size: Some(Vec2::new(another_box_size.x, another_box_size.y)),
+                ..default()
+            },
+            transform: Transform::from_translation(another_box_position.extend(0.0)),
+            ..default()
+        })
+        .with_children(|builder| {
+            builder.spawn(Text2dBundle {
+                text: Text {
+                    sections: vec![TextSection::new(
+                        "this text wraps in the box\n(Unicode linebreaks)",
+                        slightly_smaller_text_style.clone(),
+                    )],
+                    alignment: TextAlignment::Left,
+                    linebreak_behaviour: BreakLineOn::WordBoundary,
+                },
+                text_2d_bounds: Text2dBounds {
+                    // Wrap text in the rectangle
+                    size: another_box_size,
+                },
+                // ensure the text is drawn on top of the box
+                transform: Transform::from_translation(Vec3::Z),
+                ..default()
+            });
+        });
 }
 
 fn animate_translation(

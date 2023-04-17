@@ -2,6 +2,10 @@
 
 ## 20230417
 
+サブパッケージの動作
+
+run --package bevy_rhai --bin bevy_rhai
+
 3d_scene.rsが最低限動いたfeature
 
 ```toml
