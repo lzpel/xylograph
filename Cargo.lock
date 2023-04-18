@@ -649,13 +649,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "bevy_rhai"
-version = "0.1.0"
-dependencies = [
- "rhai",
-]
-
-[[package]]
 name = "bevy_scene"
 version = "0.10.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2715,4 +2708,5 @@ name = "xylograph"
 version = "0.1.0"
 dependencies = [
  "bevy",
+ "rhai",
 ]

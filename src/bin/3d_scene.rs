@@ -1,9 +1,11 @@
 use bevy::prelude::*;
 use bevy::math::Vec3;
+use xylograph::HelloPlugin;
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
+        .add_plugin(HelloPlugin)
         .add_startup_system(setup)
         .add_system(rotate_camera)
         .run();
