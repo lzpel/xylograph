@@ -6,6 +6,8 @@
 ```shell
 rustup target install wasm32-unknown-unknown
 cargo install wasm-bindgen-cli
+curl https://github.com/WebAssembly/binaryen/releases/download/version_112/binaryen-version_112-x86_64-windows.tar.gz | tar -zxv
+echo "copy bin/*.exe to .cargo/bin"
 ```
 
 ```shell
