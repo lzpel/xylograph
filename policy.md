@@ -2,11 +2,33 @@
 
 ## 20230417
 
-サブパッケージの動作
+### webgl
+```shell
+rustup target install wasm32-unknown-unknown
+cargo install wasm-bindgen-cli
+```
 
-run --package bevy_rhai --bin bevy_rhai
+```shell
+cargo build --release --target wasm32-unknown-unknown
+wasm-bindgen --out-dir ./target/ --target web ./target/wasm32-unknown-unknown/release/3d_scene.wasm
+```
 
-3d_scene.rsが最低限動いたfeature
+調査
+```shell
+twiggy top -n 10 target/wasm32-unknown-unknown/release/hello-world.wasm
+```
+
+これで更に小さくなった
+https://webassembly.github.io/binaryen/shrink.html
+逆にwasm-snipは意味ない、wasm-bindgenに内包されているかも
+
+### サブパッケージの動作
+
+```shell
+cargo run --package bevy_rhai --bin bevy_rhai
+```
+
+### 3d_scene.rsが最低限動いたfeature
 
 ```toml
 [dependencies.bevy]

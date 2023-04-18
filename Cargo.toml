@@ -14,6 +14,8 @@ members = [
 lto = true
 codegen-units = 1
 opt-level = "z"
+strip = true  # Automatically strip symbols from the binary.
+panic = "abort"
 
 # https://github.com/bevyengine/bevy/blob/main/docs/cargo_features.md
 # https://github.com/bevyengine/bevy/blob/1c5c94715cb17cda5ae209eef12a938501de90b5/Cargo.toml
