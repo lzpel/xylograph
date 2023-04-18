@@ -2,6 +2,11 @@
 
 ## 20230417
 
+### 気づき
+
+- bin/はsrc/下にないと認識されない
+- cargo doc --open でドキュメント生成
+
 ### webgl
 ```shell
 rustup target install wasm32-unknown-unknown
