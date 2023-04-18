@@ -11,6 +11,9 @@ cargo install wasm-bindgen-cli
 ```shell
 cargo build --release --target wasm32-unknown-unknown
 wasm-bindgen --out-dir ./target/ --target web ./target/wasm32-unknown-unknown/release/3d_scene.wasm
+wasm-opt -Oz -c target/3d_scene_bg.wasm -o target/3d_scene_bg.wasm
+echo "http://localhost:8000/test.html"
+python -m http.server
 ```
 
 調査
